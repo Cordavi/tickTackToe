@@ -15,9 +15,21 @@
 
 @implementation ViewController
 
+typedef enum buttonPlaceTags {
+  topLeft,
+  topCenter,
+  topRight,
+  centerLeft,
+  centerCenter,
+  centerRight,
+  bottomLeft,
+  bottomCenter,
+  bottomRight
+} ButtonPlace;
+
 -(void)viewDidLoad {
   [super viewDidLoad];
-  
+  [self setupGame];
 }
 
 - (void)setupGame {
@@ -36,7 +48,6 @@
 
 -(IBAction)buttonTapped:(id)sender {
   NSInteger buttonTag = ((UIButton *)sender).tag;
-  UIButton *button = sender;
   [self makeMoveForSpace:buttonTag];
 }
 
